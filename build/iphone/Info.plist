@@ -9,7 +9,18 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
-	<string>appicon.png</string>
+	<string>default_app_logo.png</string>
+	<key>CFBundleURLTypes</key>
+    <array>
+       <dict>
+          <key>CFBundleURLName</key>
+             <string>com.appcelerator.kitchensink</string>
+           <key>CFBundleURLSchemes</key>
+            <array>
+              <string>kitchensink</string>
+            </array>
+        </dict>
+    </array>
 	<key>CFBundleIdentifier</key>
 	<string>com.intridea.oilreporter</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -21,13 +32,9 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.1</string>
+	<string>1.0.1277684597</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSMainNibFile</key>
-	<string>MainWindow</string>
-	<key>NSMainNibFile~ipad</key>
-	<string>MainWindow_ipad</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

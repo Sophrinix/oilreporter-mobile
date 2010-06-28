@@ -9,7 +9,7 @@ var properties = Ti.App.Properties;
 var currentImageView;
 var currentImageAdded = false;
 var wildlifeValue = "No wildlife present";
-var hostname = "http://oilreporter.org";
+var hostname = "http://tedxoilspill.heroku.com";
 var androidActivityIndicator;
 
 if(Ti.Platform.name == 'android') {
@@ -599,10 +599,13 @@ function submitReport() {
       	}).show();
       	return;
     }
-      
+
+    Ti.App.fireEvent('change_title', { title: 'Submitting' });
+		Ti.API.info("Received geolocation response");
+    Ti.App.fireEvent('submit_form', { latitude: null, longitude: null });
+
+    /*      
     Titanium.Geolocation.getCurrentPosition(function(e) {
-      Ti.App.fireEvent('change_title', { title: 'Submitting' });
-  		Ti.API.info("Received geolocation response");
     
   		if (e.error) {
   		  if(Ti.Platform.name == 'android') {
@@ -618,6 +621,7 @@ function submitReport() {
   		  Ti.App.fireEvent('submit_form', { latitude: e.coords.latitude, longitude: e.coords.longitude });
       }
   	});
+    */
   } else {
     Ti.UI.createAlertDialog({
     	title:'Sorry!',
